@@ -1,0 +1,245 @@
+/* ============================================================
+   EVENTHUB — Tasarım Token'ları
+   ============================================================ */
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;600&display=swap');
+
+:root {
+  --bg:           #f0f2f5;
+  --bg-2:         #e8ebf0;
+  --surface:      #ffffff;
+  --surface-2:    #f7f8fa;
+  --surface-3:    #eef0f3;
+  --border:       #d1d5db;
+  --border-light: #e5e7eb;
+
+  --text:         #0d1117;
+  --text-2:       #374151;
+  --text-muted:   #6b7280;
+  --text-light:   #9ca3af;
+
+  --primary:      #1a56db;
+  --primary-h:    #1447c0;
+  --primary-dim:  #dbeafe;
+  --primary-text: #1a56db;
+
+  --success:      #16a34a;
+  --success-dim:  #dcfce7;
+  --warning:      #d97706;
+  --warning-dim:  #fef3c7;
+  --danger:       #dc2626;
+  --danger-dim:   #fee2e2;
+
+  --bilgi-color:  #16a34a;
+  --uyari-color:  #d97706;
+  --alarm-color:  #dc2626;
+
+  --topnav-h:     52px;
+  --radius:       6px;
+  --radius-sm:    4px;
+  --radius-xs:    4px;
+  --radius-lg:    8px;
+
+  --shadow-sm:    0 1px 3px rgba(0,0,0,.08), 0 1px 2px rgba(0,0,0,.05);
+  --shadow:       0 2px 6px rgba(0,0,0,.07), 0 1px 3px rgba(0,0,0,.05);
+  --shadow-md:    0 4px 12px rgba(0,0,0,.10), 0 2px 4px rgba(0,0,0,.06);
+  --transition:   .15s ease;
+
+  --mono: 'JetBrains Mono', 'Consolas', monospace;
+}
+
+[data-theme="dark"] {
+  --bg:           #0d1117;
+  --bg-2:         #090d12;
+  --surface:      #161b22;
+  --surface-2:    #1f2937;
+  --surface-3:    #243040;
+  --border:       #30363d;
+  --border-light: #21262d;
+
+  --text:         #e6edf3;
+  --text-2:       #c9d1d9;
+  --text-muted:   #8b949e;
+  --text-light:   #6e7681;
+
+  --primary:      #3b82f6;
+  --primary-h:    #60a5fa;
+  --primary-dim:  #1e3a5f;
+  --primary-text: #60a5fa;
+
+  --success:      #22c55e;
+  --success-dim:  #14532d;
+  --warning:      #f59e0b;
+  --warning-dim:  #451a03;
+  --danger:       #f87171;
+  --danger-dim:   #450a0a;
+
+  --bilgi-color:  #22c55e;
+  --uyari-color:  #f59e0b;
+  --alarm-color:  #f87171;
+
+  --shadow-sm:    0 1px 3px rgba(0,0,0,.3);
+  --shadow:       0 2px 8px rgba(0,0,0,.4);
+  --shadow-md:    0 4px 16px rgba(0,0,0,.5);
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { font-size: 13px; }
+body {
+  font-family: 'Inter', 'Segoe UI', system-ui, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+}
+
+#root {
+  min-height: 100vh;
+}
+
+/* ── Paylaşılan buton stilleri (birden fazla sayfada kullanılır) ── */
+.btn-primary {
+  padding: 9px 14px;
+  background: var(--primary); color: #fff;
+  border: none; border-radius: var(--radius-sm);
+  font-size: 13px; font-weight: 600; cursor: pointer;
+  transition: all var(--transition); font-family: inherit;
+  letter-spacing: .02em;
+}
+.btn-primary:hover:not(:disabled) { background: var(--primary-h); }
+.btn-primary:disabled { opacity: .6; cursor: not-allowed; }
+
+.btn-secondary {
+  padding: 9px 14px;
+  background: var(--surface-2); color: var(--text-2);
+  border: 1px solid var(--border); border-radius: var(--radius-sm);
+  font-size: 13px; font-weight: 600; cursor: pointer;
+  transition: all var(--transition); font-family: inherit;
+}
+.btn-secondary:hover:not(:disabled) { background: var(--surface-3); }
+.btn-secondary:disabled { opacity: .6; cursor: not-allowed; }
+
+/* ── EventHub: etkinlik ızgarası, özet kartları, check-in ekranı ── */
+.summary-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 16px;
+  margin-bottom: 24px;
+}
+
+.event-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 16px;
+  margin-bottom: 24px;
+}
+
+.certificate-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.event-detail-cover {
+  width: 100%;
+  max-height: 320px;
+  object-fit: cover;
+  border-radius: var(--radius-lg);
+  margin-bottom: 16px;
+}
+
+.event-detail-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.event-detail-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  color: var(--text-muted);
+  font-size: 13px;
+  margin: 12px 0;
+}
+
+.event-detail-description {
+  white-space: pre-wrap;
+  line-height: 1.6;
+}
+
+.event-detail-rejection {
+  color: var(--danger);
+  font-weight: 600;
+}
+
+.event-detail-actions {
+  display: flex;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+.checkin-scanner {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  max-width: 480px;
+}
+
+.checkin-scanner-camera {
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  background: #000;
+}
+
+.checkin-result {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 14px 16px;
+  border-radius: var(--radius-lg);
+  font-size: 1.4rem;
+}
+.checkin-result p { margin: 2px 0 0; font-size: 0.85rem; }
+.checkin-result--success { background: var(--success-dim); color: var(--success); }
+.checkin-result--failure { background: var(--danger-dim); color: var(--danger); }
+
+.checkin-log {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  font-size: 0.82rem;
+}
+.checkin-log li {
+  display: flex;
+  justify-content: space-between;
+  padding: 6px 10px;
+  border-radius: var(--radius-sm);
+  background: var(--surface-2);
+}
+.checkin-log-ok { color: var(--success); }
+.checkin-log-fail { color: var(--danger); }
+
+.verify-result {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  font-size: 2.4rem;
+}
+.verify-result h2 { font-size: 1.1rem; margin: 4px 0; }
+.verify-result p { margin: 0; font-size: 0.9rem; color: var(--text-2); }
+.verify-result--valid { color: var(--success); }
+.verify-result--invalid { color: var(--danger); }
+
+.empty-hint { font-size: 12px; color: var(--text-light); font-style: italic; }
+
+.login-error {
+  background: var(--danger-dim);
+  color: var(--danger);
+  border-radius: var(--radius-sm);
+  padding: 8px 10px;
+  font-size: 12px;
+  margin-bottom: 14px;
+}

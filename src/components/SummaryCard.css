@@ -1,0 +1,59 @@
+.summary-card {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-sm);
+  padding: 16px 18px;
+  min-width: 0;
+}
+
+.summary-card-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  border-radius: var(--radius);
+  font-size: 18px;
+  flex-shrink: 0;
+}
+
+.summary-card--primary .summary-card-icon { background: var(--primary-dim); color: var(--primary-text); }
+.summary-card--success .summary-card-icon { background: var(--success-dim); color: var(--success); }
+.summary-card--warning .summary-card-icon { background: var(--warning-dim); color: var(--warning); }
+.summary-card--danger  .summary-card-icon { background: var(--danger-dim);  color: var(--danger); }
+
+.summary-card-body {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  min-width: 0;
+}
+
+.summary-card-label {
+  font-size: 12px;
+  color: var(--text-muted);
+  font-weight: 500;
+}
+
+.summary-card-value {
+  font-size: 22px;
+  font-weight: 700;
+  color: var(--text);
+  line-height: 1.2;
+}
+
+.summary-card-sub {
+  font-size: 11px;
+  color: var(--text-light);
+}
+
+.summary-card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 14px;
+  margin-bottom: 20px;
+}

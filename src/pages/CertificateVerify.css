@@ -1,0 +1,23 @@
+.verify-page {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 24px;
+  background: #0f172a;
+}
+
+.verify-page-brand {
+  color: #fff;
+  font-weight: 700;
+  font-size: 1.4rem;
+}
+
+.verify-page-card {
+  background: #fff;
+  border-radius: 16px;
+  padding: 40px;
+  min-width: 320px;
+  text-align: center;
+}
